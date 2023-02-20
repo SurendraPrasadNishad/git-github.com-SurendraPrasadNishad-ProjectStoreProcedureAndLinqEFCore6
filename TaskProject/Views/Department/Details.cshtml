@@ -1,0 +1,31 @@
+﻿@model TaskProject.Models.Department
+
+@{
+    ViewData["Title"] = "Details Department";
+
+}
+
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th class="align-middle col-md-3">@Html.DisplayNameFor(model => model.DepartmentId)</th>
+                    <th class="align-middle col-md-3">@Html.DisplayNameFor(model => model.DepartmentName)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="text-center">
+                    <td class="align-middle col-md-3">
+                        @Html.DisplayFor(model => model.DepartmentId)
+                    </td>
+                    <td class="align-middle col-md-3">
+                        @Html.DisplayFor(model => model.DepartmentName)
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

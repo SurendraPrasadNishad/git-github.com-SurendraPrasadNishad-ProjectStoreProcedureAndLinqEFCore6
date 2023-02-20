@@ -1,0 +1,44 @@
+﻿@model TaskProject.Models.Employee
+
+@{
+    ViewData["Title"] = "Update Employee";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-md-2">
+        <p>
+            <h2>Update Employee</h2>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
+
+                    <div class="form-group">
+                        <label asp-for="EmployeeName" class="control-label"></label>
+                        <input asp-for="EmployeeName" class="form-control" />
+                        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmployeeAddress" class="control-label"></label>
+                        <input asp-for="EmployeeAddress" class="form-control" />
+                        <span asp-validation-for="EmployeeAddress" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DepartmentId" class="control-label"></label>
+                        <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.departmentList"></select>
+                        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-outline-success " value="Update" />
+                        </div>
+                        <div class="float-left">
+                            <a class="btn btn-outline-info" asp-action="Index">Employee List</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

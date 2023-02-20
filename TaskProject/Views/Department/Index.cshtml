@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TaskProject.Models.Department>
+
+@{
+    ViewData["Title"] = "List Of Departments";
+
+}
+
+<div class="row">
+    <div class="col-md-10 offset-md-1">
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th class="align-middle col-md-3">@Html.DisplayNameFor(model => model.DepartmentId)</th>
+                    <th class="align-middle col-md-3">@Html.DisplayNameFor(model => model.DepartmentName)</th>
+                    <th class="align-middle col-md-3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="align-middle col-md-3">
+                            @Html.DisplayFor(modelItem => item.DepartmentId)
+                        </td>
+                        <td class="align-middle col-md-3">
+                            @Html.DisplayFor(modelItem => item.DepartmentName)
+                        </td>
+                        <td class="align-middle col-md-3" style="display:inline-flex;">
+                            <a asp-action="Edit" asp-route-id="@item.DepartmentId" class="btn btn-outline-primary btn-sm"><i class="fa-sharp fa-solid fa-pen-to-square"></i>Edit</a>|
+                            <a asp-action="Details" asp-route-id="@item.DepartmentId" class="btn btn-outline-info btn-sm"><i class="fa-sharp fa-solid fa-eye"></i>Details</a>|
+                            <a asp-action="Delete" asp-route-id="@item.DepartmentId" class="btn btn-outline-danger btn-sm"><i class="fa-sharp fa-solid fa-trash"></i>Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

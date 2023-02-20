@@ -1,0 +1,43 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Delete Employee";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-md-2">
+        <p>
+            <h3>Delete Confirmation For  @Model.EmployeeName</h3>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    <label asp-for="EmployeeName" class="control-label"></label>
+                    <input asp-for="EmployeeName" class="form-control" readonly />
+                    <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmployeeAddress" class="control-label"></label>
+                    <input asp-for="EmployeeAddress" class="form-control" readonly />
+                    <span asp-validation-for="EmployeeAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Departments.DepartmentName" class="control-label"></label>
+                    <input asp-for="Departments.DepartmentName" class="form-control" readonly />
+                    <span asp-validation-for="Departments.DepartmentName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <form asp-action="Delete">
+                        <input asp-for="EmployeeId" hidden />
+                        <div class="text-center">
+                            <input type="submit" value="Confirmed" class="btn btn-outline-danger" />
+                        </div>
+                    </form>
+                    <div class="float-left">
+                        <a class="btn btn-outline-info float-left" asp-action="Index">Employee List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
